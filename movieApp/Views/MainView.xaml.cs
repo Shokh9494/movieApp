@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace movieApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class MainView : ContentPage
     {
-        public LoginPage()
+        public MainView()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            BindingContext = new MainViewModel(new NetworkService());
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿using movieApp.Services;
-using movieApp.Views;
-using System;
+﻿using movieApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace movieApp
 {
@@ -12,18 +9,19 @@ namespace movieApp
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new MainView();
         }
+
 
         protected override void OnStart()
         {
         }
 
+
         protected override void OnSleep()
         {
         }
+
 
         protected override void OnResume()
         {

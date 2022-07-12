@@ -16,20 +16,20 @@ namespace movieApp
         Task<TResult> PutAsync<TResult>(string uri, string jsonData);
         Task DeleteAsync(string uri);
     }
-    public class NetworkService
+    public class NetworkService : INetworkService1
     {
 
 
         private HttpClient _httpClient;
         public NetworkService()
         {
-            _httpClient = new HttpClient(); 
+            _httpClient = new HttpClient();
         }
         public async Task<TResult> GetAsync<TResult>(string uri)
         {
             HttpResponseMessage response = await _httpClient.GetAsync(uri);
-            string serialized= await response.Content.ReadAsStringAsync();
-            var result =JsonConvert.DeserializeObject<TResult>(serialized);
+            string serialized = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<TResult>(serialized);
             return result;
         }
 

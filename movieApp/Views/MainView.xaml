@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="movieApp.Views.MainView">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalOptions="CenterAndExpand">
+                        <Image Source="placeholder.png"
+                               Aspect="AspectFill"
+                               HeightRequest="300">
+                        </Image>
+                        <Label VerticalOptions="End"
+                               Text="{Binding .}"
+                               FontSize="38"
+                               TextColor="White"
+                               BackgroundColor="Black"
+                               VerticalTextAlignment="Center"
+                               Padding="15,0,5,0"
+                               HeightRequest="70"
+                               Opacity="0.85"
+                               LineBreakMode="TailTruncation"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
