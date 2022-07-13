@@ -23,13 +23,13 @@ namespace movieApp.ViewModels
         private async void getMovieData()
         {
             var result = await _networkService.GetAsync<RootObject>(Constans.GetMoviesUri("avengers"));
-            Items=new ObservableCollection<string>(result.Search.Select(x => x.Title));
+            Items=new ObservableCollection<MovieData>(result.Search.Select(x=> new MovieData (x.Title,x.Poster)));
             OnPropertyChanged("Items");
 
             
         }
 
-        public ObservableCollection<string> Items
+        public ObservableCollection<MovieData> Items
     {
             get;
             set;
